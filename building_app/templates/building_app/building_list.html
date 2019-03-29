@@ -1,0 +1,22 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is building List page</h2>
+    <p>building_list.html</p>
+</div>
+<div class="container">
+    <ol>
+        {% for building in buildings %}
+                 <h2><li>{{building.name}}-  <a href="{{building.id}}">Apt List;</a>
+                 <a href="{% url 'building_app:building' pk=building.pk %}">  Builiding Details</a></li></h2>
+        {% endfor %}
+    </ol>
+    
+        </div>
+
+
+</div>
+
+
+{% endblock %}

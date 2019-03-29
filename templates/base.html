@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "css/building_app/styles.css" %}" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Building App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="{% url 'building_app:buildings_list' %}">Buildings</a></li>
+            
+            <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+            
+        </ul>
+
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+                {% block body_block %}
+                {% endblock %}
+        </div>
+            
+    </div>   
+    
+</body>
+</html>

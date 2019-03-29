@@ -1,0 +1,17 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is Update extra page</h2>
+    <p>update.html</p>
+</div>
+<div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p }}
+            <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+</div>
+
+
+{% endblock %}

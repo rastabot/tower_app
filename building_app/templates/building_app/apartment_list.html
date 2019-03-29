@@ -1,0 +1,30 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is apts List page for  {{ apts.pk }}</h2>
+    <p>apartment_list.html</p>    
+</div>
+<hr>
+<div class="container">
+        <table>
+            <tr>
+                <th>Family</th>
+                <th>Number of rooms</th>
+                <th>Parking spot</th>
+            </tr>
+                {% for apt in apts %}
+            <tr>
+                <td>{{apt.family_name}}</td>
+                <td>{{apt.num_of_rooms}}</td>
+                <td>{{apt.parking_spot}}</td>
+            </tr>
+                {% endfor %}
+    
+    
+        </table>        
+    </div>
+
+
+
+{% endblock %}

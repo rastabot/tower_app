@@ -1,0 +1,19 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is Persons List page</h2>
+    <p>person_list.html</p>
+</div>
+<div class="container">
+    <ol>
+        <h1>this works</h1>
+        {% for person in persons %}
+        <h2><li>{{person.user.username}} | <a href="{{ person.id }}">To Punch In</a></li></h2>
+        
+       {% endfor %}
+        
+    </ol>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is punch in page for {{persons.user.username}}</h2>
+    <p>punchin.html</p>
+</div>
+<div class="container">
+    <ol>
+        <h1>this works</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p }}
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+        <h1> It is {% now "jS F Y H:i" %}</h1>
+    </ol>
+    
+</div>
+
+
+
+{% endblock %}

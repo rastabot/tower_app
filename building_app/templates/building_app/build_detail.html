@@ -1,0 +1,45 @@
+{% extends "building_app/building_app_base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+    <h2>this is building details page for {{ building.name }}</h2>
+    <p>build_detail.html</p>
+
+</div>
+<div class='container'>
+    <ul>
+        <li>Name : {{ building.name }}</li>
+        <li>Number of Apts :{{ building.num_of_apts }}</li>
+        <li>Number of floors: {{ building.num_of_floors }}</li>
+        <li>Has Elevetor : {{ building.elevator }}</li>
+    </ul>
+    <hr>
+    <div class="container">
+            <table >
+                <th style="text-align: center; background-color: khaki" >Apartments Detials</th>
+            </table>
+            <table>
+                <tr class="header">
+                    <th>id</th>
+                    <th>Family</th>
+                    <th style=>Number of rooms</th>
+                    <th>Parking spot</th>
+                    <th>extra</th>
+                </tr>
+                    {% for apt in building.tower.all %}
+                <tr>
+                    <td>{{apt.pk}}</td>
+                    <td>{{apt.family_name}}</td>
+                    <td>{{apt.num_of_rooms}}</td>
+                    <td>{{apt.parking_spot}}</td>
+                    <td><h5>{{apt.extras}} <a href="{% url 'building_app:update' pk=apt.pk %}">Update</a></h5></td>
+                </tr>
+                    {% endfor %}
+        
+        
+            </table>        
+
+</div>
+
+
+{% endblock %}
